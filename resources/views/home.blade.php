@@ -1,4 +1,6 @@
 @extends('layouts.template')
+@section('title', 'AR Management')
+@section('dashboard', 'active')
 
 @section('content')
 <div class="container">

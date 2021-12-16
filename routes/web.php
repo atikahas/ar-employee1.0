@@ -69,5 +69,8 @@ Route::group(['middleware' => ['logs']], function() {
         Route::get('employee/edit/{employee}', 'EmployeeController@edit');
         Route::post('employee/edit/{employee}', 'EmployeeController@update');
         Route::get('employee/delete/{employee}', 'EmployeeController@destroy');
+
+        //Inventory>VillaEquipt
+        Route::get('villa_equipment', 'VillaEquipController@index');
     });
 });

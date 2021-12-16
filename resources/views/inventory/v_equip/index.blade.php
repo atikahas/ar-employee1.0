@@ -1,17 +1,17 @@
 @extends('layouts.template')
-@section('title', 'AR | List Employee')
-@section('employee', 'active')
-@section('listemployee', 'active')
+@section('title', 'AR | Villa Equipment')
+@section('inventory', 'active')
+@section('villa_equipment', 'active')
 @section('content')
 
 <section class="content-header">
       <h1>
-        Employee Management
+        Inventory Management <small>(Villa Equipment)</small>
       </h1>
 </section>
 
 <section class="content">
-    <div class="box box-default">
+<div class="box box-default">
         <div class="box-header with-border">
             <h3 class="box-title">List Employee</h3>
             <div class="box-tools pull-right">
@@ -24,25 +24,25 @@
                     <thead>
                         <tr style="background-color:#dadfe4;">
                             <th>#</th>
+                            <th>Image</th>
                             <th>Name</th>
-                            <th>Phone No.</th>
-                            <th>Position</th>
+                            <th>Quantity</th>
                             <th>Options</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $count = 0; ?>
-                        @foreach($employee as $e)
+                        @foreach($v_equip as $v)
                         <?php $count++; ?>
                         <tr>
                             <td>{{$count}}</td>
-                            <td>{{$e->name}}</td>
-                            <td>{{$e->phone}}</td>
-                            <td>{{$e->position}}</td>
+                            <td>{{$v->image}}</td>
+                            <td>{{$v->name}}</td>
+                            <td>{{$v->quantity}}</td>
                             <td class="text-center">
-                                <a href="{{url('employee/view/'.$e->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
-                                <a href="{{url('employee/edit/'.$e->id)}}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
-                                <a href="{{url('employee/delete/'.$e->id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                <a href="{{url('employee/view/'.$v->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+                                <a href="{{url('employee/edit/'.$v->id)}}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
+                                <a href="{{url('employee/delete/'.$v->id)}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

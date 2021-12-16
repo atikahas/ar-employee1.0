@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVillaequiptTable extends Migration
+class CreateVillaequiplogTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateVillaequiptTable extends Migration
      */
     public function up()
     {
-        Schema::create('v_equipt', function (Blueprint $table) {
+        Schema::create('v_equiplog', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('quantity');
             $table->string('image');
-            $table->integer('created_by');
+            $table->integer('updated_by');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +31,6 @@ class CreateVillaequiptTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('v_equipt');
+        Schema::dropIfExists('v_equiplog');
     }
 }

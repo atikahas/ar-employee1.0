@@ -1,4 +1,7 @@
 @extends('layouts.template')
+@section('title', 'AR | Detail Employee')
+@section('employee', 'active')
+@section('listemployee', 'active')
 @section('content')
 
 <section class="content-header">

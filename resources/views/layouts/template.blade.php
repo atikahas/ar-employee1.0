@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>AmanRimba Employee</title>
+  <title>@yield('title')</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="{{ asset('adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('adminlte/bower_components/font-awesome/css/font-awesome.min.css') }}">
@@ -80,9 +80,9 @@
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu" data-widget="tree">
-                    <li><a href="{{url('home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                    <li><a href="{{url('admin')}}"><i class="fa fa-user-secret"></i> <span>Admin Management</span></a></li>
-                    <li class="treeview">
+                    <li class="@yield('dashboard')"><a href="{{url('home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                    <li class="@yield('admin')"><a href="{{url('admin')}}"><i class="fa fa-user-secret"></i> <span>Admin Management</span></a></li>
+                    <li class="treeview @yield('employee')">
                         <a href="#">
                             <i class="fa fa-users"></i> <span>Employee Management</span>
                             <span class="pull-right-container">
@@ -90,8 +90,19 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{url('employee')}}"><i class="fa fa-list-alt"></i> List Employee</a></li>
-                            <li><a href="{{url('employee/add')}}"><i class="fa fa-user-plus"></i> Add Employee</a></li>
+                            <li class="@yield('listemployee')"><a href="{{url('employee')}}"><i class="fa fa-list-alt"></i> List Employee</a></li>
+                            <li class="@yield('addemployee')"><a href="{{url('employee/add')}}"><i class="fa fa-user-plus"></i> Add Employee</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview @yield('inventory')">
+                        <a href="#">
+                            <i class="fa fa-cubes"></i> <span>Inventory Management</span>
+                            <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="@yield('villa_equipment')"><a href="{{url('villa_equipment')}}"><i class="fa fa-home"></i> Villa Equiptment</a></li>
                         </ul>
                     </li>
                 </ul>
