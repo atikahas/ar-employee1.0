@@ -96,7 +96,7 @@
                         Press <kbd>/</kbd> to focus
                     </div>
                 </div>
-                <a href="{{url('')}}" class="sidebar-link sidebar-link-with-icon">
+                <a href="{{url('home')}}" class="sidebar-link sidebar-link-with-icon">
                     <span class="sidebar-icon">
                         <i class="fa fa-tv" aria-hidden="true"></i>
                     </span>
