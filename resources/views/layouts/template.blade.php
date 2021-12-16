@@ -99,6 +99,7 @@
         </aside>
 
         <div class="content-wrapper">
+            @include('layouts.flash-message')
             @yield('content')
         </div>
 

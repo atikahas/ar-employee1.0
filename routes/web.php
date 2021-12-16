@@ -60,5 +60,14 @@ Route::group(['middleware' => ['logs']], function() {
         Route::get('admin/metadata/{metadata}', 'AdminController@metaDataEdit');
         Route::post('admin/metadata/{metadata}', 'AdminController@metaDataUpdate');
         Route::post('admin/metadata/{metadata}/delete', 'AdminController@metaDataDelete');
+
+        //Employee
+        Route::get('employee', 'EmployeeController@index');
+        Route::get('employee/add', 'EmployeeController@add');
+        Route::post('employee/add', 'EmployeeController@store');
+        Route::get('employee/view/{employee}', 'EmployeeController@view');
+        Route::get('employee/edit/{employee}', 'EmployeeController@edit');
+        Route::post('employee/edit/{employee}', 'EmployeeController@update');
+        Route::get('employee/delete/{employee}', 'EmployeeController@destroy');
     });
 });
