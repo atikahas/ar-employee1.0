@@ -16,6 +16,7 @@ class CreateVillaequiplogTable extends Migration
         Schema::create('v_equiplog', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('category');
             $table->integer('quantity');
             $table->string('image');
             $table->integer('updated_by');

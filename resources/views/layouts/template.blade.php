@@ -102,7 +102,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="@yield('villa_equipment')"><a href="{{url('villa_equipment')}}"><i class="fa fa-home"></i> Villa Equiptment</a></li>
+                            <li class="@yield('villa')"><a href="{{url('villa')}}"><i class="fa fa-home"></i> Villa Equiptment</a></li>
                         </ul>
                     </li>
                 </ul>

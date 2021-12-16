@@ -71,6 +71,7 @@ Route::group(['middleware' => ['logs']], function() {
         Route::get('employee/delete/{employee}', 'EmployeeController@destroy');
 
         //Inventory>VillaEquipt
-        Route::get('villa_equipment', 'VillaEquipController@index');
+        Route::get('villa', 'VillaEquipController@index');
+        Route::get('inventory/villa/add', 'VillaEquipController@add');
     });
 });
