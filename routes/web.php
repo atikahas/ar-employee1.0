@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['logs']], function() {
     Route::get('/', function () {
-        return view('welcome');
+        return view('auth/login');
     });
     
     Auth::routes();
@@ -73,6 +73,8 @@ Route::group(['middleware' => ['logs']], function() {
         //Inventory>Equipment
         Route::get('equipment', 'EquipmentController@index');
         Route::post('equipment/add', 'EquipmentController@store');
+        Route::get('equipment/edit/{equipment}', 'EquipmentController@edit');
+        Route::post('equipment/edit/{equipment}', 'EquipmentController@update');
 
         //Inventory>VillaEquipt
         Route::get('villa', 'VillaEquipController@index');

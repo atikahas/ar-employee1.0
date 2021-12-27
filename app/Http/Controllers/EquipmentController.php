@@ -27,4 +27,21 @@ class EquipmentController extends Controller
             return back()->with('error', $e->getMessage());
         }
     }
+
+    public function edit(Equipment $equipment) {
+        return view('inventory.edit',['equipment' => $equipment]);
+    }
+
+    public function update(Request $request, Equipment $equipment) {
+        try {
+            $data = $request->all();
+            $data['updated_by'] = Auth::user()->id;
+
+            $equipment->update($data);
+
+           return redirect('equipment')->with('success', 'Equipment info updated.');
+        } catch(\Exception $e) {
+            return back()->with('error', $e->getMessage())->withInput();
+        }
+    }
 }
